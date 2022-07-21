@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y ninja python2.7 gcc g++ clang make cmake git
+RUN apt update -y && DEBIAN_FRONTEND=noninteractive apt install -y ninja-build python2.7 gcc g++ clang make cmake git
 
 RUN git clone https://github.com/bloomberg/bde-tools.git
 RUN export PATH=$PWD/bde-tools/bin:$PATH      # add bde-tools to the 'PATH'
