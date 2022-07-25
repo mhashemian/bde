@@ -7,9 +7,11 @@ RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y pytho
 
 RUN git clone https://github.com/bloomberg/bde-tools.git
 RUN export PATH=/bde-tools/bin:$PATH
+RUN bde_build_env.py list
 RUN git clone https://github.com/bloomberg/bde.git
 WORKDIR bde
 
-RUN export BDE_CMAKE_BUILD_DIR=$PWD/_build
-#RUN cmake_build.py configure -u dbg_exc_mt_64_cpp14
-#RUN cmake_build.py build --test run
+RUN eval `bde_build_env.py --build-type=Release --cpp-std=17`
+RUN cmake_build.py configure
+RUN cmake_build.py build
+RUN cmake_build.py --install_dir=/bde_install --prefix=/ install
