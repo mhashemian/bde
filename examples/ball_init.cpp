@@ -28,6 +28,17 @@ int main(int argc, char ** argv)
 
     // Start logging.
     BALL_LOG_INFO << "Hello, World!";
+    
+    std::ifstream inFile;
+    inFile.open(argv[1]);
+
+    std::stringstream strStream;
+    strStream << inFile.rdbuf();
+    std::string str = strStream.str(); //str holds the content of the file
+    
+    BALL_LOG_INFO << str;
+    
+    inFile.close();
 
     return 0;
 }
