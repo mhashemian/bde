@@ -19,7 +19,7 @@ cmds:
 
   # Command used to start the target, "@@" is the input file
   # (when "@@" is omitted Mayhem defaults to stdin inputs)
-  - cmd: /bde/a.out @@
+  - cmd: /bde/examples/build/ball_init @@
     timeout: 5.0
     
     ## Uncomment to change default dir (/) from which the target is invoked
