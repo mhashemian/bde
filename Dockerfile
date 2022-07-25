@@ -6,7 +6,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y python3.8
 
 RUN git clone https://github.com/bloomberg/bde-tools.git
-RUN export PATH=/bde-tools/bin:$PATH
+ENV PATH=$PATH:/bde-tools/bin
 RUN bde_build_env.py list
 RUN git clone https://github.com/bloomberg/bde.git
 WORKDIR bde
