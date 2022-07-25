@@ -25,7 +25,8 @@ RUN cmake_build.py configure
 RUN cmake_build.py build
 RUN cmake_build.py --install_dir=/bde_install --prefix=/ install
 
+WORKDIR /bde/examples
 RUN mkdir build
-WORKDIR /bde/build
+WORKDIR /bde/examples/build
 RUN cmake -DCMAKE_PREFIX_PATH=/bde_install/lib64/opt_exc_mt/  ../
 RUN cmake --build ./
