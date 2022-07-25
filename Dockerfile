@@ -1,6 +1,10 @@
 FROM ubuntu
 
-RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y ninja-build python2.7 python3 gcc g++ clang make cmake git
+RUN apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get install -y ninja-build python2.7 gcc g++ clang make cmake git
+
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update
+RUN apt-get install python3.5
 
 RUN git clone https://github.com/bloomberg/bde-tools.git
 RUN export PATH=/bde-tools/bin:$PATH
