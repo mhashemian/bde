@@ -24,3 +24,8 @@ ENV BDE_CMAKE_INSTALL_DIR="/bde/_install"
 RUN cmake_build.py configure
 RUN cmake_build.py build
 RUN cmake_build.py --install_dir=/bde_install --prefix=/ install
+
+RUN mkdir build
+WORKDIR /bde/build
+RUN cmake -DCMAKE_PREFIX_PATH=/bde_install/lib64/opt_exc_mt/  ../
+RUN cmake --build ./
