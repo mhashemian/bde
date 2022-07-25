@@ -11,7 +11,7 @@ RUN bde_build_env.py list
 RUN git clone https://github.com/bloomberg/bde.git
 WORKDIR bde
 
-RUN eval `bde_build_env.py --build-type=Release --cpp-std=17`
+RUN bde_build_env.py --build-type=Release --cpp-std=17
 RUN cmake_build.py configure
 RUN cmake_build.py build
 RUN cmake_build.py --install_dir=/bde_install --prefix=/ install
