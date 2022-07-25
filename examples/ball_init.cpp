@@ -8,6 +8,10 @@
 
 #include <unistd.h>
 
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
 using namespace BloombergLP;
 
 BALL_LOG_SET_NAMESPACE_CATEGORY("MAIN");
