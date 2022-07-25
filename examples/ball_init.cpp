@@ -27,7 +27,7 @@ int main(int argc, char ** argv)
     ball::LoggerManager::singleton().registerObserver(observer, "default");
 
     // Start logging.
-    BALL_LOG_INFO << "Hello, World!";
+    //BALL_LOG_INFO << "Hello, World!";
     
     std::ifstream inFile;
     inFile.open(argv[1]);
