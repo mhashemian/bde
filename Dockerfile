@@ -8,5 +8,5 @@ RUN git clone https://github.com/bloomberg/bde.git
 WORKDIR bde
 
 RUN export BDE_CMAKE_BUILD_DIR=$PWD/_build
-RUN cmake_build.py configure -u dbg_exc_mt_64_cpp14
-RUN cmake_build.py build --test run
+#RUN cmake_build.py configure -u dbg_exc_mt_64_cpp14
+#RUN cmake_build.py build --test run
